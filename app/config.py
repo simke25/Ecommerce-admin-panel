@@ -9,6 +9,7 @@ load_dotenv()
 
 def default_db_uri():
     db_path = (Path(__file__).resolve().parent.parent / "instance" / "app.db").resolve()
+    db_path.parent.mkdir(parents=True, exist_ok=True)
     return f"sqlite:///{db_path.as_posix()}"
 
 
