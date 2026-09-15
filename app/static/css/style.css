@@ -1,0 +1,41 @@
+:root {
+  --primary: #0d6efd;
+  --dark: #111827;
+  --light: #f8f9fa;
+  --muted: #6c757d;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fb 0%, #eaf2ff 100%);
+  min-height: 100vh;
+}
+
+.navbar {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card {
+  border: 0;
+  border-radius: 16px;
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.badge {
+  text-transform: capitalize;
+}
+
+.alert {
+  border-radius: 12px;
+}
+
+#app-loader {
+  display: none;
+}

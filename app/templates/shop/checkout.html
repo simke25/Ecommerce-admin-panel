@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+  <div class="col-lg-7">
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+        <h3 class="mb-4">Checkout</h3>
+        <form method="post">
+          {{ form.hidden_tag() }}
+          <div class="mb-3">
+            {{ form.customer_name.label(class="form-label") }}
+            {{ form.customer_name(class="form-control") }}
+          </div>
+          <div class="mb-3">
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control") }}
+          </div>
+          <div class="mb-3">
+            {{ form.address.label(class="form-label") }}
+            {{ form.address(class="form-control", rows=4) }}
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">{{ form.submit.label.text }}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-5">
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+        <h4>Order summary</h4>
+        {% for item in cart_items %}
+          <div class="d-flex justify-content-between mt-3">
+            <span>{{ item.product.name }} x {{ item.quantity }}</span>
+            <strong>${{ '%.2f' % item.subtotal }}</strong>
+          </div>
+        {% endfor %}
+        <hr>
+        <div class="d-flex justify-content-between">
+          <span>Total</span>
+          <strong>${{ '%.2f' % total }}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

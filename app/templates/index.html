@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="row align-items-center min-vh-75">
+  <div class="col-lg-6">
+    <h1 class="display-5 fw-bold">Dobrodosli u Mojanova</h1>
+    <p class="lead text-muted">Napredni Flask projekat sa MySQL bazom, Bootstrap dizajnom i modernim dashboard-om.</p>
+    <div class="d-flex gap-3">
+      <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg">Registruj se</a>
+      <a href="{{ url_for('auth.login') }}" class="btn btn-outline-secondary btn-lg">Uloguj se</a>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card shadow border-0">
+      <div class="card-body p-4">
+        <h3 class="card-title">Sta nudi projekat?</h3>
+        <ul class="list-group list-group-flush mt-3">
+          <li class="list-group-item">Autentifikacija korisnika</li>
+          <li class="list-group-item">MySQL / SQLite podrška</li>
+          <li class="list-group-item">Bootstrap UI</li>
+          <li class="list-group-item">CRUD operacije</li>
+          <li class="list-group-item">JavaScript interakcije</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
